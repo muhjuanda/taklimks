@@ -24,6 +24,7 @@
       </md-card-area>
     </md-card>
     <!-- homesweethome -->
+    <!-- homesweethome -->
   </div>
     <!-- <md-button class="md-fab md-primary" to="/addTaklim">
       <md-icon>add</md-icon>
