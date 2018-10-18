@@ -5,7 +5,6 @@
         <md-card-header>
           <div class="md-title">Tambah Taklim</div>
         </md-card-header>
-        <p class="title">aa {{datataklim.id_user}}</p>
         <md-card-content>
           <div class="md-layout md-gutter">
             <div class="md-layout-item md-small-size-100">
@@ -233,6 +232,9 @@
         }
       },
       dataup () {
+        if (localStorage.getItem('user') === null) {
+          this.$router.push('/login')
+        }
         localStorage.getItem('user')
         this.user = JSON.parse(localStorage.user)
         this.datataklim.id_user = this.user.body.id

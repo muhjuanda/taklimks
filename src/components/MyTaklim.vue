@@ -48,7 +48,26 @@ export default {
     },
 
     hapus (id) {
-      this.$http.get('http://localhost/laravel/public/api/taklim/delete?id=' + id).then(function (body) { console.log(body) })
+      this.$swal({
+        title: 'Hapus Taklim?',
+        text: 'Data tidak bisa dikembalikan',
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Ya',
+        cancelButtonText: 'Batal'
+      }).then((result) => {
+        if (result.value) {
+          this.$http.get('http://localhost/laravel/public/api/taklim/delete?id=' + id).then(function (body) { console.log(body) })
+          this.$swal(
+            'terhapus',
+            'Data telah terhapus.',
+            'success'
+          )
+          this.$router.push('/mytaklim')
+        }
+      })
     }
   },
   mounted () {

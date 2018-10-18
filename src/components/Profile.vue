@@ -5,7 +5,6 @@
     <img v-bind:src="user.body.foto" style="width:100%; margin-top: 20px;" /> 
   <h1 style="margin-top: 20px;">{{ user.body.name }}</h1>
   <p class="title">{{ user.body.email }}</p>
-  <p><button>Contact</button></p>
 </div>
   </div>
 </template>

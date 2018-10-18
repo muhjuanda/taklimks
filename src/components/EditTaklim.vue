@@ -5,7 +5,6 @@
         <md-card-header>
           <div class="md-title">Edit Taklim</div>
         </md-card-header>
-        <p class="title">aa </p>
         <md-card-content>
           <div class="md-layout md-gutter">
             <div class="md-layout-item md-small-size-100">
@@ -217,6 +216,12 @@
         if (!this.$v.$invalid) {
           console.log('asdfasdfasdfasdf' + this.datataklim)
           this.$http.post('http://localhost/laravel/public/api/taklim/update', this.datataklim).then(function (body) { console.log(body) })
+          this.$swal(
+            'Good job!',
+            'You clicked the button!',
+            'success'
+          )
+          this.$router.push('/')
         }
       },
       dataup () {

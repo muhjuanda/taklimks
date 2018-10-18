@@ -6,7 +6,7 @@
       <md-app-toolbar class="navbar md-primary">
         <span class="md-title">Taklim Makassar</span>
         <div class="md-toolbar-section-end">
-            <md-button class="md-icon-button">
+            <md-button class="md-icon-button" to="/addtaklim">
               <md-icon>add</md-icon>
             </md-button>
           </div>

@@ -6,7 +6,6 @@
           <div class="md-title">Login</div>
         </md-card-header>
         <md-card-content>
-          <center><p class="alert">email/password salah</p></center>
           <div class="md-layout md-gutter">
             <div class="md-layout-item md-small-size-100">
               <md-field :class="getValidationClass('email')">
@@ -83,12 +82,18 @@
         this.$v.$touch()
         if (!this.$v.$invalid) {
           this.$http.post('http://localhost/laravel/public/api/user/login', this.dataUser).then(function (body) {
-            console.log(body)
-            if (body !== null) {
+            console.log(body.body)
+            if (body.body !== 'Kosong') {
               console.log('ada data')
               const parsed = JSON.stringify(body)
               localStorage.setItem('user', parsed)
               this.$router.push('/')
+            } else {
+              this.$swal({
+                type: 'error',
+                title: 'Oops...',
+                text: 'email/password salah'
+              })
             }
           })
         }

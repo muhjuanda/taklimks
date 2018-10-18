@@ -37,7 +37,8 @@ export default {
   name: 'home',
   data () {
     return {
-      taklim: ''
+      taklim: '',
+      data: ''
     }
   },
   methods: {
